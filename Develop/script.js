@@ -56,6 +56,14 @@ $(function () {
 
   //
   // TODO: Add code to display the current date in the header of the page.
-  currentDayEl.text(dayjs().format("dddd, MMMM D"));
 
+    if(dayjs().format("D") === 1){
+      currentDayEl.text(dayjs().format("dddd, MMMM D[st]"));
+    }else if(dayjs().format("D") === 2){
+      currentDayEl.text(dayjs().format("dddd, MMMM D[nd]"));
+    }else if(dayjs().format("D") === 3){
+      currentDayEl.text(dayjs().format("dddd, MMMM D[rd]"));
+    }else{
+      currentDayEl.text(dayjs().format("dddd, MMMM D[th]"));
+    }
 });
